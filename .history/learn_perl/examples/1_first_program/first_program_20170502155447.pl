@@ -83,7 +83,7 @@ print "$var\n";
 # Escaping Characters
 # Perl uses the backslash (\) character to escape any type of character that might 
 # interfere with our code. Let's take one example where we want to print double quote and $ sign
-my $result = "This is \"number\"";
+$result = "This is \"number\"";
 print "$result\n";
 print "\$result\n";
 # This will produce the following result
@@ -122,7 +122,7 @@ print "\$result\n";
 
 
 # This is case of interpolation.
-my $str = "Welcome to \ntutorialspoint.com!";
+$str = "Welcome to \ntutorialspoint.com!";
 print "$str\n";
 
 # This is case of non-interpolation.

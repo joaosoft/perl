@@ -122,7 +122,7 @@ print "\$result\n";
 
 
 # This is case of interpolation.
-my $str = "Welcome to \ntutorialspoint.com!";
+$str = "Welcome to \ntutorialspoint.com!";
 print "$str\n";
 
 # This is case of non-interpolation.

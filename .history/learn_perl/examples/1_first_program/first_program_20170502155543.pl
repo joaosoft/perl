@@ -56,7 +56,7 @@ print 'Value of a = $a\n';
 
 
 $a = 10;
-my $var = <<"EOF";
+$var = <<"EOF";
 This is the syntax for here document and it will continue
 until it encounters a EOF in the first line.
 This is case of double quote so variable value will be 
