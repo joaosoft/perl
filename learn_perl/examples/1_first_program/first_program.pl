@@ -98,7 +98,7 @@ print "\$result\n";
 # Perl is a case sensitive programming language. Thus $Manpower and $manpower are two different identifiers in Perl.
 
 
-
+=begin
 \\	Backslash
 \'	Single quote
 \"	Double quote

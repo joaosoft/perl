@@ -43,3 +43,90 @@ $status = ($age > 60 )? "A senior citizen" : "Not a senior citizen";
 print "$name is  - $status\n";
 # This will produce the following result
 # Ali is - Not a senior citizen
+
+
+print "What is your age? ";
+my $age = <STDIN>;
+if ($age >= 18) {
+    print "In most countries you can vote.\n";
+}
+
+
+print "What is your age? ";
+my $age = <STDIN>;
+if ($age >= 18) {
+    print "In most countries you can vote.\n";
+} else {
+    print "You are too young to vote\n";
+}
+
+
+print "What is your age? ";
+my $age = <STDIN>;
+if ($age >= 18) {
+    print "In most countries you can vote.\n";
+    if ($age >= 23) {
+        print "You can drink alcohol in the USA\n";
+    }
+} else {
+    print "You are too young to vote\n";
+    if ($age > 6) {
+        print "You must go to school...\n";
+    }
+}
+
+
+print "What is your age? ";
+my $age = <STDIN>;
+if ($age < 6) {
+    print "You are before school\n";
+} else {
+    if ($age < 18) {
+        print "You must go to school\n";
+    } else {
+        if ($age < 23) {
+            print "In most countries you can vote.\n";
+        } else {
+            print "You can drink alcohol in the USA\n";
+        }
+    }
+}
+
+
+print "What is your age? ";
+my $age = <STDIN>;
+if ($age < 6) {
+    print "You are before school\n";
+} elsif ($age < 18) {
+    print "You must go to school\n";
+} elsif ($age < 23) {
+    print "In most countries you can vote.\n";
+} else {
+    print "You can drink alcohol in the USA\n";
+}
+
+
+# blocos vazios
+print "What is your age? ";
+my $age = <STDIN>;
+if ($age < 0) {
+}
+
+
+# comentarios internos
+print "What is your age? ";
+my $age = <STDIN>;
+if ($age < 0) {
+    # TODO
+}
+
+
+
+# Os três pontos são chamados de operador yada, yada. 
+# É o que as pessoas escreveriam quando estão escrevendo bastante texto e querem deixar espaço para mais. 
+# Alguns escrevem ‘etc’ ou ‘bla bla bla’.
+print "What is your age? ";
+my $age = <STDIN>;
+if ($age < 0) {
+    ...
+}

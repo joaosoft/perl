@@ -31,3 +31,25 @@ This context not only doesn't care what the return value is, it doesn't even wan
 # Interpolative
 This context only happens inside quotes, or things that work like quotes.
 =cut
+
+
+# A my declares the listed variables to be local (lexically) to the enclosing block, file, or eval. 
+# If more than one variable is listed, the list must be placed in parentheses.
+# Quick summary: my creates a new variable, local temporarily amends the value of a variable
+
+# In the example below, $::a refers to $a in the 'global' namespace.
+
+$a = 3.14159;
+{
+  my $a = 3;
+  print "In block, \$a = $a\n";
+  print "In block, \$::a = $::a\n";
+}
+print "Outside block, \$a = $a\n";
+print "Outside block, \$::a = $::a\n";
+
+# This outputs
+# In block, $a = 3
+# In block, $::a = 3.14159
+# Outside block, $a = 3.14159
+# Outside block, $::a = 3.14159
