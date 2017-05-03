@@ -23,7 +23,6 @@ $hashref = {
    'Clyde' => 'Bonnie',
 };
 # A reference to an anonymous subroutine can be created by using sub without a subname as follows −
-
 $coderef = sub { print "Boink!\n" };
 
 
@@ -112,3 +111,17 @@ $cref = \&PrintHash;
 # Item : Tom
 # Item : age
 # Item : 19
+
+
+
+
+############## simple example
+# Defining a function reference:
+$ref = \&subroutine;
+$ref = sub { BLOCK };
+$ref = "subroutineName"; # or $ref = $scalarSubroutineName
+
+# Dereferencing:
+$ref->(@args);
+&$ref;  
+&{$ref}(@args);

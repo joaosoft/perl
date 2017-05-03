@@ -130,3 +130,50 @@ my $age = <STDIN>;
 if ($age < 0) {
     ...
 }
+
+
+
+
+####### unless
+$a = 20;
+# check the boolean condition using unless statement
+unless( $a < 20 ){
+   # if condition is false then print the following
+   printf "a is not less than 20\n";
+}
+print "value of a is : $a\n";
+
+$a = "";
+# check the boolean condition using unless statement
+unless ( $a ){
+   # if condition is false then print the following
+   printf "a has a false value\n";
+}
+print "value of a is : $a\n";
+
+
+
+####### switch
+    use Switch;
+    switch ($val) {
+        case 1		            { print "number 1" }
+        case "a"	            { print "string a" }
+        case [1..10,42]	    { print "number in list" }
+        case (@array)	    { print "number in list" }
+        case /\w+/           { print "pattern" }
+        case qr/\w+/    	{ print "pattern" }
+        case (%hash)	   { print "entry in hash" }
+        case (\%hash)	   { print "entry in hash" }
+        case (\&sub)	    { print "arg to subroutine" }
+        else		             { print "previous case not true" }
+    }
+
+    use Switch 'Perl6';
+    given ($val) {
+        when 1                { handle_num_1(); }
+        when ($str1)        { handle_str_1(); }
+        when [0..9]         { handle_num_any(); last }
+        when /\d/            { handle_dig_any(); }
+        when /.*/            { handle_str_any(); }
+        default                { handle anything else; }
+    }
