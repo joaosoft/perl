@@ -245,3 +245,51 @@ print "Value of \$a + (\$b * \$c )/ \$d is  = $e\n";
 # Value of (($a + $b) * $c) / $d is = 90
 # Value of ($a + $b) * ($c / $d ) is = 90
 # Value of $a + ($b * $c )/ $d is = 50
+
+
+
+
+#################
+# The ||= operator is logical-OR-assign. It's similar to +=, which is add-assign. It computes the logical OR of the LHS and RHS, 
+# and then assigns the result to the LHS, which therefore must be a valid lvalue.
+
+# In other words, just as
+
+$a += 3;
+# is equivalent to
+
+$a = $a+3;
+# we can say that
+
+$a ||= 1;
+# is equivalent to
+
+$a = $a||1;
+# Now, with regard to the statement you referred to in your question, there's slightly more going on there than in my example above. 
+# In your statement, the LHS is not just a simple variable token, but is a variable token that is being treated as a 
+# hash reference ($sheet) and is being dereferenced to get the value that is keyed with the string 'MaxRow'. 
+# The RHS is also a hash dereference operation on $sheet, but whose key is 'MinRow'. But the behavior is the same; 
+# we can say that
+
+$sheet->{'MaxRow'} ||= $sheet->{'MinRow'};
+# is equivalent to
+
+$sheet->{'MaxRow'} = $sheet->{'MaxRow'}||$sheet->{'MinRow'};
+# (Note: I always like to explicitly quote hash key values as strings, because that's what they are, 
+# but not everyone goes for that degree of explicitness.)
+
+# For more about the logical OR operation, see http://en.wikipedia.org/wiki/Logical_disjunction, and for Perl-specific info, 
+# see http://perldoc.perl.org/perlop.html#C-style-Logical-Or (for || and //) 
+# and http://perldoc.perl.org/perlop.html#Logical-or-and-Exclusive-Or (for or). 
+# Most relevant quote, from the Perl documentation on ||:
+
+# Binary "||" performs a short-circuit logical OR operation. That is, if the left operand is true, the right operand is not even evaluated. 
+# alar or list context propagates down to the right operand if it is evaluated.
+# That doesn't quite fully explain it; in the case that the LHS evaluates to a truthy value (see below for definition), 
+# then the return value of the || operation is the value of the LHS, otherwise it is the value of the RHS.
+
+# In Perl, logical values are generally represented by 0 (or sometimes '' or undef) for false and 1 for true. 
+# However, to be more specific, any value that is not one of the above three false values is treated as true, 
+# and sometimes programmers refer to this distinction using the informal terms "truthy" and "falsy". IOW, 0, '', 
+# and undef are falsy, and everything else is truthy. 
+# See http://www.perlmonks.org/?node=what%20is%20true%20and%20false%20in%20Perl%3F for more detail.

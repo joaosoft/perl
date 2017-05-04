@@ -307,3 +307,81 @@ print "Value of list = @list\n";
 # This will produce the following result 
 # Value of list = 4 3 2
 
+
+
+
+############# PUSH
+# Description
+# This function pushes the values in LIST onto the end of the list ARRAY. Used with pop to implement stacks.
+
+# Syntax
+# Following is the simple syntax for this function −
+
+# push ARRAY, LIST
+# Return Value
+# This function returns number of elements in new array.
+
+# Example
+# Following is the example code showing its basic usage −
+
+#!/usr/bin/perl -w
+
+$, = ",";
+@array = ( 1, 2 );
+print "Before pushing elements  @array \n";
+push(@array, (3, 4, 5));
+print "After pushing elements  @array \n";
+# When above code is executed, it produces the following result −
+
+# Before pushing elements  1 2
+# After pushing elements  1 2 3 4 5
+
+
+
+
+########## WANTARRAY
+# Description
+# This function returns true if the context of the currently executing function is looking for a list value. Returns false in a scalar context.
+
+# Syntax
+# Following is the simple syntax for this function −
+
+# wantarray
+# Return Value
+# This function returns undef if no context and 0 if lvalue expects a scalar.
+
+# Example
+# Following is the example code showing its basic usage −
+
+#!/usr/bin/perl -w
+
+sub foo {
+   return(wantarray() ? qw(A, B, C) : '1');
+}
+$result = foo();    # scalar context
+@result = foo();    # array context
+print("foo() in a  scalar context: $result\n");
+print("foo() in an array  context:
+@result\n");
+# When above code is executed, it prod  uces the following result −
+foo() in a  scalar context: 1
+foo() in an array  context:
+A, B, C
+
+
+###############
+@pizzas = ("cheese", "pepperoni", "veggie" );
+
+@pizzas = qw(cheese pepperoni veggie );
+foreach $pizza (@pizzas) {
+  print "$pizza\n";
+}
+
+# This simple foreach loop produces the following output:
+# cheese
+# pepperoni
+# veggie
+
+$pizzas[0] = 'cheese';
+$pizzas[1] = 'pepperoni';
+$pizzas[2] = 'veggie';

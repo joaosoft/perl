@@ -2,6 +2,20 @@
 use strict;
 use warnings;
 
+
+###### BEST PRACTICES
+# hashref:
+my $hashref = { meh => 1};
+# hash
+my %hash = ( meh => 1);
+# array
+my @arry = (1,2,3);
+# arrayref
+my $array = [1,2,3];
+
+
+
+
 # A Perl reference is a scalar data type that holds the location of another value 
 # which could be scalar, arrays, or hashes. Because of its scalar nature, a reference can be used anywhere, a scalar can be used.
 
