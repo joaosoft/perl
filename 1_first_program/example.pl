@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 use strict;
 use warnings;
+use Data::Dumper;
 
 # This is a comment in perl
 print "hi NAME\n";
@@ -10,7 +11,8 @@ $b = 'hi joao';
 print "Value of a = $a\n";
 print "Value of b = $b\n";
 
-
+my %simple_hash = ( a => 'aaa', b => 'bbb');
+print "Key: $_ and Value: $simple_hash{$_}\n" foreach (keys%simple_hash);
 
 
 
@@ -24,7 +26,7 @@ print "Value of b = $b\n";
 
 ## Starting from Perl 5.10 you can specify "static" variables directly.
 sub Somesub {
-    state $somevar;
+    #state $somevar;
 }
 
 # When you load a module "Foo" with use Foo or require(), perl executes the Foo.pm file like an ordinary script. 

@@ -1,20 +1,33 @@
-# perl
+# Documentation
+> If you have something to add, please let me know joaosoft@gmail.com
 
-# to know more you can see the source of this project here https://www.tutorialspoint.com/perl/ 
+## Introduction
+This project started from the need to learn perl language. This will cover almost everithing with simple examples.
 
-# compile and run
-$perl github_perl/learn_perl/examples/1_first_program/example.pl
+## Follow me at
+Facebook: https://www.facebook.com/joaosoft
 
-# install
-pp can create an executable that includes perl and your script (and any module dependencies), but it will be specific to your architecture, so you couldn't run it on both Windows and linux for instance.
+LinkedIn: https://www.linkedin.com/in/jo%C3%A3o-ribeiro-b2775438/
 
-To make a stand-alone executable, suitable for running on a machine that doesn't have perl installed:
-
-1. Install PAR::Packer. Example for *nix:
-sudo cpan -i PAR::Packer
-For Strawberry Perl for Windows or for ActivePerl and MSVC installed:
-cpan -i PAR::Packer
-
-2. Pack it with pp. It will create an executable named "example" or "example.exe" on Windows.
-pp -o example example.pl
-This would work only on the OS where it was built.
+## Content
+- 1_first_program
+- 2_data_types
+- 3_sort
+- 4_condition
+- 5_operators
+- 6_date_and_time
+- 7_subroutines
+- 8_references
+- 9_formats
+- 10_files
+- 11_directories
+- 12_error_handling
+- 13_special_variables
+- 14_socket_programing
+- 15_object_oriented
+- 16_database
+- 17_packages_and_modules
+- 18_important_functions
+- 19_tests
+- 20_constants
+- 21_json
