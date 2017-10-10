@@ -1,0 +1,18 @@
+version: "2.1"
+services:
+  redis:
+    image: redis:3.0-alpine
+    ports:
+      - "7100:6379"
+
+  psql:
+    image: postgres:9.5
+    ports:
+      - "7000:5432"
+
+  nsqd:
+    image: nsqio/nsq
+    command: /nsqd
+    ports:
+      - "4150:4150"
+      - "4151:4151"
